@@ -13,7 +13,7 @@ function App() {
 
     dispatch(verifyAuth());
 
-  },[]);
+  },[dispatch]);
 
   
   return (

@@ -7,7 +7,7 @@ import discount from '../assets/Discount.svg';
 const Button = ()=>(
 
     <a 
-    href="#"
+    href="/"
     className='grid place-items-center uppercase w-[120px] h-[120px] 
     rounded-full text-gradient font-semibold text-[14px]
      border-[#5ce1e6] border-[4px]'

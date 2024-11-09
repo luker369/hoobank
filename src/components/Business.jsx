@@ -12,7 +12,7 @@ const Business = () => {
         <p className='text-gray-400 my-[20px]'>With the right credit card, you can improve your financial life by building credit, earning rewards and saving money. But with hundreds of credit cards on the market.</p>
 
         <a
-         href="#"
+         href="/"
          className='get_started-btn'
          >
           Get Started

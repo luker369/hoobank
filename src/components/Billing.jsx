@@ -23,11 +23,11 @@ const Billing = () => {
       
         <div className="buttons flex items-center gap-[20px]">
 
-          <a href="#">
+          <a href="/">
             <img src={apple} alt="Apple" />
           </a>
 
-          <a href="#">
+          <a href="/">
             <img src={googlePlay} alt="google play" />
           </a>
 
