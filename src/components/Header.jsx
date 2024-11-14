@@ -59,7 +59,7 @@ const Header = () => {
       {isSigned && (
         <div className="flex items-center gap-[15px]">
           <img className='w-[30px] h-[30px]' src={userImage} alt="profile" />
-          <button onClick={handleLogout} className='hidden md:block button bg-red-500 text-white'>Logout</button>
+          <button onClick={handleLogout} className='hidden lg:block button bg-red-500 text-white'>Logout</button>
         </div>
       )}
 
@@ -84,7 +84,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="list absolute -left-[250px] bg-gray-gradient w-[280px] px-[15px] py-[20px] top-[180%] rounded-[6px]">
             <List />
-            <div className="md:hidden mt-[20px] flex justify-center">
+            <div className="lg:hidden mt-[20px] flex justify-center">
               {isSigned ? (
                 // Logout Button Only When User is Signed In
                 <button
