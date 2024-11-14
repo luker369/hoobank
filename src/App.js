@@ -1,4 +1,4 @@
-import {Home,Login,Signup} from './components';
+import {Home,Login,Signup,ScrollToTop} from './components';
 import { Routes,Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -28,6 +28,7 @@ function App() {
 
     </Routes>
 
+    <ScrollToTop />
 
     </>
   );

@@ -6,3 +6,4 @@ export {default as Hero} from './Hero';
 export {default as Billing} from './Billing';
 export {default as Card} from './Card';
 export {default as Testimonials} from './Testimonials';
+export {default as ScrollToTop} from './ScrollToTop';

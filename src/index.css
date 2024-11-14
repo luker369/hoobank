@@ -41,7 +41,9 @@
 
 /* custom css */
 
-
+html {
+  scroll-behavior: smooth;
+}
 /* components  */
 
 .blue__gradient {
