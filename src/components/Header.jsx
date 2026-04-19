@@ -24,20 +24,12 @@ const Buttons = () => (
   </div>
 );
 
-const Profile = ({ handleLogout }) => (
-  <div className="flex items-center gap-[10px]">
-    <img className='w-[30px] h-[30px]' src={userImage} alt="profile" />
-    <button onClick={handleLogout} className='hidden md:block button bg-red-500 text-white'>Logout</button>
-  </div>
-);
-
 const Header = () => {
   const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isSigned = useSelector(state => state.isSigned);
   const [cookie, setCookie, removeCookie] = useCookies(['hoobank-user']);
 
-  // Define the logout function in Home.jsx
   const handleLogout = () => {
     removeCookie('hoobank-user', { path: "/" });
     dispatch(verifyAuth());

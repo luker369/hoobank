@@ -10,44 +10,23 @@ const Login = () => {
 
   const [cookie,setCookie] = useCookies(['hoobank-user']);
 
-  const [userData,setUserData] = useState({
-    email: "",
-    password: ""
-  })
-
+  const [userData, setUserData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
-  function loginUser(e){
-
+  function loginUser(e) {
     e.preventDefault();
+    setError('');
 
-    let usersData = window.localStorage.getItem('hoobank');
+    const raw = window.localStorage.getItem('hoobank');
+    if (!raw) { setError('No account found. Please sign up first.'); return; }
 
-    if(!usersData){
+    const usersData = JSON.parse(raw);
+    const user = usersData.find(usr => usr.email === userData.email);
+    if (!user) { setError('No account found with that email.'); return; }
 
-      alert("You must sign up first");
-      return;
-    }
-
-    usersData = JSON.parse(usersData);
-
-    const user = usersData.find(usr=>usr.email === userData.email);
-
-    if(!user){
-      
-      alert("User not found");
-      return;
-    }
-
-    const isPasswordCorrect = user.password === userData.password;
-
-    if(!isPasswordCorrect){
-
-      alert('Your Password is Wrong');
-      return;
-    }
+    if (user.password !== userData.password) { setError('Incorrect password.'); return; }
 
     setCookie("hoobank-user","true",{path: "/"});
 
@@ -109,6 +88,8 @@ const Login = () => {
               />
             </div>
           </div>
+
+          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
 
           <div>
             <button

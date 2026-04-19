@@ -1,9 +1,10 @@
-import React from 'react'
-import features from '../data/business'
+import features from '../data/business';
+import { useInView } from '../hooks/useInView';
 
 const Business = () => {
+  const ref = useInView();
   return (
-    <div className='px-[30px] py-[70px] flex flex-col xl:flex-row gap-[50px] xl:gap-[30px]'>
+    <div ref={ref} className='fade-up px-[30px] py-[70px] flex flex-col xl:flex-row gap-[50px] xl:gap-[30px]'>
       
       <div className="flex-1">
 

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv /c/Users/walke/Desktop/WebDev/gptTheme/gpt /c/Users/walke/Desktop/WebDev/gpt)",
+      "Bash(rmdir /c/Users/walke/Desktop/WebDev/gptTheme)",
+      "Read(//c/Users/walke/Desktop/WebDev//**)",
+      "Bash(npm install *)",
+      "Bash(xargs grep *)"
+    ]
+  }
+}

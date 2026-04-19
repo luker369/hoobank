@@ -1,10 +1,8 @@
-import React from 'react'
 import hero from '../assets/robot.png';
 import discount from '../assets/Discount.svg';
+import { useInView } from '../hooks/useInView';
 
-// flex-basis
-
-const Button = ()=>(
+const Button = () => (
 
     <a 
     href="/"
@@ -18,8 +16,9 @@ const Button = ()=>(
 
 
 const Hero = () => {
+  const ref = useInView(0.05);
   return (
-    <div className='flex gap-[50px] flex-col lg:flex-row px-[20px] sm:px-[50px] mt-[80px]'>
+    <div ref={ref} className='fade-up flex gap-[50px] flex-col lg:flex-row px-[20px] sm:px-[30px] mt-[80px]'>
       
       <div className="text flex-1">
 

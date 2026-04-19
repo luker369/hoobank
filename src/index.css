@@ -162,3 +162,22 @@ ul{
 .pd-top-xxl{
   padding-top: 120px;
 }
+
+/* scroll animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+}
+
+.fade-up.in-view {
+  animation: fadeUp 0.65s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1; }
+  .fade-up.in-view { animation: none; }
+}

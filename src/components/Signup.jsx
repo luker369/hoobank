@@ -14,32 +14,28 @@ const Signup = () => {
 
   const [cookie,setCookie] = useCookies(['hoobank-user']);
 
-  const [userData,setUserData] = useState({
-    username: "",
-    email: "",
-    password: ""
-  })
+  const [userData, setUserData] = useState({ username: '', email: '', password: '' });
+  const [error, setError] = useState('');
 
-  function signNewUser(e){
-
+  function signNewUser(e) {
     e.preventDefault();
+    setError('');
 
-    let arr = [];
-
-    let localStHoobank = window.localStorage.getItem("hoobank");
-
-    if(localStHoobank){
-
-      const previousArray = JSON.parse(localStHoobank);
-
-      arr = previousArray;
-
+    if (userData.password.length < 6) {
+      setError('Password must be at least 6 characters.');
+      return;
     }
 
+    const raw = window.localStorage.getItem('hoobank');
+    const arr = raw ? JSON.parse(raw) : [];
+
+    if (arr.find(u => u.email === userData.email)) {
+      setError('An account with that email already exists.');
+      return;
+    }
 
     arr.push(userData);
-
-    window.localStorage.setItem("hoobank", JSON.stringify(arr));
+    window.localStorage.setItem('hoobank', JSON.stringify(arr));
 
     setCookie("hoobank-user","user",{path: "/"});
 
@@ -122,6 +118,8 @@ const Signup = () => {
               />
             </div>
           </div>
+
+          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
 
           <div>
             <button

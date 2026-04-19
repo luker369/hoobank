@@ -1,8 +1,9 @@
-import React from 'react'
+import { useInView } from '../hooks/useInView';
 
 const CTA = () => {
+  const ref = useInView();
   return (
-    <div className="px-[30px] pb-[50px] pt-[30px]">
+    <div ref={ref} className="fade-up px-[30px] pb-[50px] pt-[30px]">
         <div className='feature-card-show rounded-[10px] px-[20px] sm:px-[50px] py-[50px] flex flex-wrap justify-between items-center gap-[20px]'>
 
             <div>

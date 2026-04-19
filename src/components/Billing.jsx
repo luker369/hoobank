@@ -1,12 +1,13 @@
-import React from 'react'
 import billing from '../assets/bill.png';
+import { useInView } from '../hooks/useInView';
 import apple from '../assets/apple.svg';
 import googlePlay from '../assets/google.svg';
 
 
 const Billing = () => {
+  const ref = useInView();
   return (
-    <div className='px-[30px] py-[70px] flex flex-col-reverse lg:flex-row gap-[30px] sm:items-center'>
+    <div ref={ref} className='fade-up px-[30px] py-[70px] flex flex-col-reverse lg:flex-row gap-[30px] sm:items-center'>
       
       <div className="image flex-1 relative">
       <img className='w-full' src={billing} alt="billing" />
@@ -19,7 +20,7 @@ const Billing = () => {
         Easily control your billing & invoicing.
         </h1>
 
-        <p className='text-gray-400 my-[40px]'>Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio aenean neque. Fusce ipsum orci rhoncus aliporttitor integer platea placerat.</p>
+        <p className='text-gray-400 my-[40px]'>Track every transaction in real time. Our smart billing dashboard gives you full visibility into your spending, invoices, and payment history — all in one place.</p>
       
         <div className="buttons flex items-center gap-[20px]">
 

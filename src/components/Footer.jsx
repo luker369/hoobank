@@ -11,9 +11,12 @@ const Links = ({title,links})=>(
        {
         links.map((link,index)=>(
 
-            <li key={index}><a href="#" className={`${index !== links.length - 1 ? 'mb-[10px]' : ''} text-gray-400`}>{link}</a></li> 
+            <li key={index}>
+              <a href="#" className={`${index !== links.length - 1 ? 'mb-[10px]' : ''} text-gray-400`}>{link}</a>
+            </li> 
         ))
        }
+
        </ul>
     </div>
 )
@@ -25,10 +28,8 @@ const Footer = () => {
     <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px]'>
       
       <div>
-
         <img className='w-[150px]' src={Logo} alt="logo" />
         <p className='text-gray-500 mt-[20px] text-[18px]'>A new way to make the payments easy, reliable and secure.</p>
-
       </div>
 
       <div>
@@ -36,7 +37,6 @@ const Footer = () => {
         title="Useful Links"
         links={["content", "How it Works","Create", "Explore", "Terms & Services"]}
         />
-
       </div>
 
       <div>
